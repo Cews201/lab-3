@@ -7,16 +7,16 @@ function TablaEstudiantes(){
 
     
     let requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
 };
 
 useEffect (()=>{
     fetch("https://apiestudiantes.maosystems.dev/estudiantes", requestOptions)
-  .then(response => response.text())
-  .then(result => setEstudiantes(result.data))
-  .catch(error => console.log('error', error));
+    .then(response => response.json())
+    .then(result => setEstudiantes(result.data))
+    .catch(error => console.log('error', error));
 },[])
 
 
@@ -37,7 +37,20 @@ useEffect (()=>{
                 </tr>
             </thead>
             <tbody>
-
+                {
+                    estudiantes.map(estudiante =>(
+                        <tr key={estudiante.estudiante_id}>
+                            <td>{estudiante.estudiante_id}</td>
+                            <td>{estudiante.estudiante_nombres}</td>
+                            <td>{estudiante.estudiante_apellidos}</td>                            
+                            <td>{estudiante.estudiante_correo}</td>
+                            <td>{estudiante.estudiante_celular}</td>
+                            <td>{estudiante.estudiante_linkedin}</td>
+                            <td>{estudiante.estudiante_github}</td>
+                            <td>{estudiante.estudiante_estado}</td>
+                        </tr>
+                    ))
+                }
             </tbody>
         </table>
     );
