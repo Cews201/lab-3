@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "./AuthContext";
 import "../assets/css/login.css" 
+import logo from "../assets/react.svg"
 
 
 const Login =() =>{
@@ -19,6 +20,7 @@ const Login =() =>{
     return(
         <div className="login-container">
             <form className="login-form" onSubmit={enviarForm}>
+                <img src={logo} alt="React"/>
                 <input 
                     type="number"
                     placeholder="ingrese su identificacion"

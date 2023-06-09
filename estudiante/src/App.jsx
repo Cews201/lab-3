@@ -4,6 +4,7 @@ import AuthContext from './components/AuthContext'
 import { useContext } from 'react'
 import TablaEstudiantes from './components/tablaestudiantes'
 import Login from './components/login'
+import LogoutButton from './components/LogoutButton'
 
 
 
@@ -17,7 +18,12 @@ function App() {
       {
         token ?
         (
+          <>
+          <nav>
+            <LogoutButton/>
+          </nav>          
           <TablaEstudiantes/>
+          </>        
 
         ):(
           <Login/>

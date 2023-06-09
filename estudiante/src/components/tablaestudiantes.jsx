@@ -27,6 +27,10 @@ useEffect (()=>{
 
     const [estudiantes, setEstudiantes]=useState([]);
     return(
+        <><div>
+            <h1>TABLA ESTUDIANTES</h1>
+        </div>
+        
          <table>
             <thead>
                 <tr>
@@ -36,7 +40,7 @@ useEffect (()=>{
                     <th>Correo</th>
                     <th>Celular</th>
                     <th>LinkedIn</th>
-                    <th>GirHub</th>
+                    <th>GitHub</th>
                     <th>Estado</th>
                 </tr>
             </thead>
@@ -57,6 +61,7 @@ useEffect (()=>{
                 }
             </tbody>
         </table>
+        </>
     );
 }
 
