@@ -1,9 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
+import AuthContext from "./AuthContext";
+
+
 
 function TablaEstudiantes(){
-
+    const {token} = useContext(AuthContext);
+    
     let myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWNhY2lvbiI6MTAyNDQ2ODU1MSwiY29ycmVvIjoiY2FtaWxvd2lsbGFuc29uQGdtYWlsLmNvbSIsImlhdCI6MTY4Mjk5ODg3NiwiZXhwIjoxNjgzNjAzNjc2fQ.8NV0RB5MY8NPRbJQiwhUn4F0S_z3PfmXe5Os3frGWo0");
+        myHeaders.append("Authorization", `Bearer ${token}` );
 
     
     let requestOptions = {
@@ -23,7 +27,7 @@ useEffect (()=>{
 
     const [estudiantes, setEstudiantes]=useState([]);
     return(
-        <table>
+         <table>
             <thead>
                 <tr>
                     <th>ID</th>

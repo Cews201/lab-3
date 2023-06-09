@@ -1,21 +1,30 @@
 import { useState } from 'react'
 import './App.css'
+import AuthContext from './components/AuthContext'
+import { useContext } from 'react'
 import TablaEstudiantes from './components/tablaestudiantes'
+import Login from './components/login'
+
 
 
 function App() {
+
+  const {user, token} = useContext(AuthContext);
   
   return (
-    <>
+
     <div>
-      <h1>CREATE TABLE LAB</h1>
-    </div>
-    <div>
-        <TablaEstudiantes/>
-        
-      </div>
-    </>
-      
+      {
+        token ?
+        (
+          <TablaEstudiantes/>
+
+        ):(
+          <Login/>
+        )
+      }
+    </div>    
+
   )
 }
 
