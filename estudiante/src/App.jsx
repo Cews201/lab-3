@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import TablaEstudiantes from './components/tablaestudiantes'
 import Login from './components/login'
 import LogoutButton from './components/LogoutButton'
-
+import Contador from './components/contador'
 
 
 function App() {
@@ -23,7 +23,9 @@ function App() {
             <LogoutButton/>
           </nav>          
           <TablaEstudiantes/>
-          </>        
+          <Contador/>
+          </>    
+
 
         ):(
           <Login/>
